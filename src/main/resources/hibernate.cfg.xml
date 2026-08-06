@@ -22,5 +22,7 @@
 
         <!-- Entity classes registered here as you create them -->
 
+        <mapping class="com.jobportal.entity.Company" />
+
     </session-factory>
 </hibernate-configuration>
