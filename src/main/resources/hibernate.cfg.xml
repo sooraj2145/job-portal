@@ -24,6 +24,7 @@
 
         <mapping class="com.jobportal.entity.Company" />
         <mapping class="com.jobportal.entity.User" />
+        <mapping class="com.jobportal.entity.JobSeekerProfile" />
 
     </session-factory>
 </hibernate-configuration>
