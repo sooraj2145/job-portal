@@ -28,7 +28,7 @@
         <mapping class="com.jobportal.entity.Category" />
         <mapping class="com.jobportal.entity.Skill" />
         <mapping class="com.jobportal.entity.Job" />
-
+        <mapping class="com.jobportal.entity.Application" />
 
 
     </session-factory>
