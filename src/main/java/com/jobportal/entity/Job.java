@@ -4,6 +4,8 @@ package com.jobportal.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="jobs")
@@ -42,6 +44,16 @@ public class Job {
     @Column(name="posted_date")
     private LocalDateTime postedDate;
 
+
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name="job_skills",
+            joinColumns = @JoinColumn(name="job_id"),
+            inverseJoinColumns = @JoinColumn(name="skill_id")
+    )
+
+    private Set<Skill> skills = new HashSet<Skill>();
 
     public Job() {}
 
@@ -141,6 +153,22 @@ public class Job {
 
     public void setPostedDate(LocalDateTime postedDate) {
         this.postedDate = postedDate;
+    }
+
+    public Set<Skill> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(Set<Skill> skills) {
+        this.skills = skills;
+    }
+
+    public void addSkill(Skill skill) {
+        this.skills.add(skill);
+    }
+
+    public void removeSkill(Skill skill) {
+        this.skills.remove(skill);
     }
 
     @Override
